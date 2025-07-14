@@ -1,6 +1,7 @@
 alert("Welcome to Archisha's Website!");
 
 window.onload = () => {
+  // Dark mode toggle
   window.toggleDarkMode = function () {
     document.body.classList.toggle("dark-mode");
   };
@@ -13,7 +14,6 @@ window.onload = () => {
   let particles = [];
 
   document.addEventListener("mousemove", (e) => {
-    // Add multiple particles for smoother trails
     for (let i = 0; i < 2; i++) {
       particles.push({
         x: e.clientX,
