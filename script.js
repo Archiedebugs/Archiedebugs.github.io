@@ -1,5 +1,5 @@
 alert("Welcome to Archisha's Website!");
-unction toggleDarkMode() {
+function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
   }
   
