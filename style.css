@@ -219,7 +219,9 @@ body {
   color: #ffccff;
 }
 
-/* Optional for spacing below nav */
 body {
   padding-top: 60px; /* prevent content from hiding under navbar */
+}
+html {
+  scroll-behavior: smooth;
 }
