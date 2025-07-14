@@ -13,7 +13,7 @@ body {
   p {
     color: rgb(0, 0, 0);
     font-family: 'Pacifico', cursive;
-    font-size: medium;
+    font-size: small;
   }  
   .profile-pic {
     width: 150px;
@@ -26,5 +26,5 @@ body {
   }
   h3 {
     color: darkgreen;
-    font-size: medium;
+    font-size: larger;
 }
