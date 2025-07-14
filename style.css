@@ -1,18 +1,19 @@
 body {
     font-family: Arial;
-    text-align: center;
+    text-align: left;
     margin-top: 100px;
     background-color: #f0f0f0;
   }
   
   h1 {
     color: rgb(4, 17, 77);
+    font-size: larger;
   }
   
   p {
     color: rgb(0, 0, 0);
     font-family: 'Pacifico', cursive;
-    font-size: 3rem;
+    font-size: medium;
   }  
   .profile-pic {
     width: 150px;
@@ -21,7 +22,9 @@ body {
   }
   h2 {
       color: darkgreen;
+      font-size: larger;
   }
   h3 {
     color: darkgreen;
+    font-size: medium;
 }
