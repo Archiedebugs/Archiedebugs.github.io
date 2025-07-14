@@ -1,41 +1,50 @@
 alert("Welcome to Archisha's Website!");
 
 window.onload = () => {
+  // Dark mode toggle
   window.toggleDarkMode = function () {
     document.body.classList.toggle('dark-mode');
   };
 
   const canvas = document.getElementById("cursor-canvas");
   const ctx = canvas.getContext("2d");
+
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
+  ctx.lineWidth = 4;
+  ctx.lineCap = 'round';
+
+  let trails = [];
   let lastMouse = null;
 
-  function drawTrail(x, y) {
-    if (lastMouse) {
-      ctx.beginPath();
-      ctx.moveTo(lastMouse.x, lastMouse.y);
-      ctx.lineTo(x, y);
-      ctx.strokeStyle = "rgba(255, 0, 0, 0.6)"; // red with transparency
-      ctx.lineWidth = 4;
-      ctx.stroke();
-    }
-    lastMouse = { x, y };
-  }
-
-  // Paint over canvas with transparent black to fade older lines
-  function fadeCanvas() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; // lower alpha = slower fade
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-  }
-
   document.addEventListener("mousemove", (e) => {
-    drawTrail(e.clientX, e.clientY);
+    const point = { x: e.clientX, y: e.clientY, alpha: 1 };
+    if (lastMouse) {
+      trails.push({ from: { ...lastMouse }, to: { ...point } });
+    }
+    lastMouse = point;
   });
 
   function animate() {
-    fadeCanvas();
+    // Clear only the canvas layer, not the background
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw trails
+    trails.forEach((trail, i) => {
+      ctx.beginPath();
+      ctx.moveTo(trail.from.x, trail.from.y);
+      ctx.lineTo(trail.to.x, trail.to.y);
+      ctx.strokeStyle = `rgba(255, 0, 0, ${trail.to.alpha})`;
+      ctx.stroke();
+
+      // Fade out
+      trail.to.alpha -= 0.02;
+      if (trail.to.alpha <= 0) {
+        trails.splice(i, 1);
+      }
+    });
+
     requestAnimationFrame(animate);
   }
 
@@ -46,3 +55,4 @@ window.onload = () => {
     canvas.height = window.innerHeight;
   });
 };
+
