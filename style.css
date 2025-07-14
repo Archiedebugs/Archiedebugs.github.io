@@ -134,7 +134,7 @@ body {
   .blob-1 {
     width: 400px;
     height: 400px;
-    background: #8d346b; /* pink */
+    background: #c47774; /* pink */
     top: -100px;
     left: -100px;
     animation-delay: 0s;
@@ -152,7 +152,7 @@ body {
   .blob-3 {
     width: 350px;
     height: 350px;
-    background: #4d3496; /* purple */
+    background: #157222; /*green */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
