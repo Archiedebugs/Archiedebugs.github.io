@@ -55,15 +55,16 @@ window.onload = () => {
     canvas.height = window.innerHeight;
   });
     // Skills loop animation
-  const slides = document.querySelectorAll(".skill-slide");
-  let index = 0;
+const slides = document.querySelectorAll(".skill-slide");
+let index = 0;
 
-  setInterval(() => {
-    slides.forEach((slide) => {
-      slide.classList.remove("active");
-    });
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-  }, 5000); // change every 5 seconds
+setInterval(() => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 5000); // change every 5 seconds
+
 
 };
