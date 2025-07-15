@@ -1,3 +1,4 @@
+// Welcome alert
 alert("Welcome to Archisha's Website!");
 
 window.onload = () => {
@@ -6,6 +7,7 @@ window.onload = () => {
     document.body.classList.toggle("dark-mode");
   };
 
+  // Particle cursor setup
   const canvas = document.getElementById("cursor-canvas");
   const ctx = canvas.getContext("2d");
   canvas.width = window.innerWidth;
@@ -50,21 +52,10 @@ window.onload = () => {
 
   animate();
 
+  // Handle window resize
   window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
-    // Skills loop animation
-const slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-  slides.forEach((slide) => {
-    slide.classList.remove("active");
-  });
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 4000);
-
-
 };
+
