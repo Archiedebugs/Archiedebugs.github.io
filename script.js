@@ -55,7 +55,7 @@ window.onload = () => {
     canvas.height = window.innerHeight;
   });
     // Skills loop animation
-const slides = document.querySelectorAll(".skill-slide");
+const slides = document.querySelectorAll(".slide");
 let index = 0;
 
 setInterval(() => {
@@ -64,7 +64,6 @@ setInterval(() => {
   });
   index = (index + 1) % slides.length;
   slides[index].classList.add("active");
-}, 4000); // change every 4 seconds
-
+}, 4000);
 
 };
