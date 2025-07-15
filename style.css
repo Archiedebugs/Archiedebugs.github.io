@@ -227,32 +227,40 @@ html {
 }
 .skills-loop {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 50px 0;
-  min-height: 150px;
-  position: relative;
+  justify-content: flex-start;
   padding-left: 20px;
+  margin: 50px 0;
 }
 
-.skill-slide {
-  opacity: 0;
-  transition: opacity 1s ease;
-  /* REMOVE position: absolute */
-  display: none; /* hide by default */
-}
-
-.skill-slide.active {
-  opacity: 1;
-  display: block; /* show only current */
-}
 .card {
-  background-color: #002f6c; /* Deep blue */
+  background-color: #002f6c;
   color: white;
-  padding: 15px 20px;
-  border-radius: 12px;
-  min-width: 220px;
-  max-width: 300px;
-  font-size: 14px;
+  width: 260px;
+  height: 260px;
+  border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.slide h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
 }
