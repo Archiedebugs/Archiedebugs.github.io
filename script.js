@@ -54,19 +54,16 @@ window.onload = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
-  const title = document.querySelector(".skills-title");
-  const cards = document.querySelector(".skills-cards");
-  let showCards = false;
+    // Skills loop animation
+  const slides = document.querySelectorAll(".skill-slide");
+  let index = 0;
 
   setInterval(() => {
-    if (showCards) {
-      title.style.display = "block";
-      cards.classList.add("hidden");
-    } else {
-      title.style.display = "none";
-      cards.classList.remove("hidden");
-      cards.style.opacity = 1;
-    }
-    showCards = !showCards;
-  }, 4000);
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000); // change every 5 seconds
+
 };
