@@ -246,3 +246,13 @@ html {
   opacity: 1;
   display: block; /* show only current */
 }
+.card {
+  background-color: #002f6c; /* Deep blue */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  min-width: 220px;
+  max-width: 300px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
