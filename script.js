@@ -54,4 +54,19 @@ window.onload = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
+  const title = document.querySelector(".skills-title");
+  const cards = document.querySelector(".skills-cards");
+  let showCards = false;
+
+  setInterval(() => {
+    if (showCards) {
+      title.style.display = "block";
+      cards.classList.add("hidden");
+    } else {
+      title.style.display = "none";
+      cards.classList.remove("hidden");
+      cards.style.opacity = 1;
+    }
+    showCards = !showCards;
+  }, 4000);
 };
