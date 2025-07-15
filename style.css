@@ -232,16 +232,24 @@ html {
   margin: 50px 0;
 }
 
+.skills-loop {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  margin: 50px 0;
+}
+
 .card {
   background-color: #002f6c;
   color: white;
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 20px;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,14 +260,21 @@ html {
   position: absolute;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide.active {
   opacity: 1;
-  position: relative;
 }
 
-.slide h2 {
+.title-slide {
   font-size: 28px;
   font-weight: bold;
   margin: 0;
