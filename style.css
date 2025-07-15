@@ -237,26 +237,12 @@ html {
 
 .skill-slide {
   opacity: 0;
-  transition: opacity 0.8s ease;
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
+  transition: opacity 1s ease;
+  /* REMOVE position: absolute */
+  display: none; /* hide by default */
 }
 
 .skill-slide.active {
   opacity: 1;
-  position: relative;
-  z-index: 1;
-  pointer-events: auto;
-}
-
-.card {
-  background-color: #002f6c; /* Deep blue */
-  color: white;
-  padding: 15px 20px;
-  border-radius: 12px;
-  min-width: 220px;
-  max-width: 300px;
-  font-size: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: block; /* show only current */
 }
