@@ -228,7 +228,7 @@ html {
 .skills-loop {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* left-align */
+  align-items: flex-start;
   margin: 50px 0;
   min-height: 150px;
   position: relative;
@@ -237,13 +237,17 @@ html {
 
 .skill-slide {
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.8s ease;
   position: absolute;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .skill-slide.active {
   opacity: 1;
   position: relative;
+  z-index: 1;
+  pointer-events: auto;
 }
 
 .card {
